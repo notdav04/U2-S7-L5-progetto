@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backoffice</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-secondary-subtle">
+    <header>
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid justify-content-between px-5">
+          <ul class="navbar-nav mb-2 mb-lg-0 px-5">
+            <li class="nav-item d-inline-block">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item d-inline-block">
+              <a class="nav-link active" href="backoffice.html?title=add"
+                >Backoffice</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main role="main">
+      <section class="bg-secondary-subtle mt-5">
+        <div
+          style="max-width: 40rem"
+          id="add_section"
+          class="container bg-white p-4 rounded shadow-sm"
+        >
+          <h2 class="mb-3">Inserisci i seguenti dettagli sul tuo prodotto:</h2>
+          <form id="form_add" action="" class="text-start">
+            <label for="name">Nome prodotto:</label>
+            <input
+              class="mx-2 w-50"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="es. Samsung s22"
+              required
+            />
+            <br />
+            <label class="mt-2" for="description">Descrizione prodotto:</label>
+            <input
+              class="mx-2 w-50"
+              type="text"
+              name="description"
+              id="description"
+              placeholder='es. cellulare samsung, 6.3"'
+              required
+            />
+            <br />
+            <label class="mt-2" for="brand">Brand del prodotto:</label>
+            <input
+              class="mx-2 w-50"
+              type="text"
+              name="brand"
+              id="brand"
+              placeholder="es. Samsung/iphone"
+              required
+            />
+            <br />
+            <label class="mt-2" for="img">Url immagine del prodotto:</label>
+            <input
+              class="mx-2 w-50"
+              type="text"
+              name="img"
+              id="img"
+              placeholder="ex. https://example.com/image.jpg"
+              required
+            />
+            <br />
+            <label class="mt-2" for="price">Prezzo:</label>
+            <input
+              class="mx-2"
+              type="text"
+              name="price"
+              id="price"
+              placeholder="es. 99,99"
+              required
+            />
+            <br />
+            <button class="mt-2 btn btn-primary" type="submit">
+              Aggiungi prodotto
+            </button>
+            <button
+              id="formAddReset"
+              class="mt-2 btn btn-secondary"
+              type="button"
+            >
+              Reset
+            </button>
+          </form>
+        </div>
+        <div
+          id="middle_section"
+          style="max-width: 40rem"
+          class="mt-5 container bg-white p-4 rounded shadow-sm text-center"
+        >
+          <div class="btn-group">
+            <button id="modBtn" class="btn border border-1 border-secondary">
+              Modifica
+            </button>
+            <button id="deleteBtn" class="btn border border-1 border-secondary">
+              Elimina
+            </button>
+          </div>
+        </div>
+        <div
+          id="mod_section"
+          style="max-width: 40rem"
+          class="mt-5 container bg-white p-4 rounded shadow-sm"
+        >
+          <h2 class="mb-3">
+            Inserisci i seguenti dettagli sul prodotto da modificare:
+          </h2>
+          <form id="form_mod" action="" class="text-start">
+            <label for="name">Nome prodotto:</label>
+            <input
+              class="mx-2 w-50"
+              type="text"
+              name="name"
+              id="name_mod"
+              placeholder="es. Samsung s22"
+              required
+            />
+            <br />
+            <label class="mt-2" for="description">Descrizione prodotto:</label>
+            <input
+              class="mx-2 w-50"
+              type="text"
+              name="description"
+              id="description_mod"
+              placeholder='es. cellulare samsung, 6.3"'
+              required
+            />
+            <br />
+            <label class="mt-2" for="brand">Brand del prodotto:</label>
+            <input
+              class="mx-2 w-50"
+              type="text"
+              name="brand"
+              id="brand_mod"
+              placeholder="es. Samsung/iphone"
+              required
+            />
+            <br />
+            <label class="mt-2" for="img">Url immagine del prodotto:</label>
+            <input
+              class="mx-2 w-50"
+              type="text"
+              name="img"
+              id="img_mod"
+              placeholder="ex. https://example.com/image.jpg"
+              required
+            />
+            <br />
+            <label class="mt-2" for="price">Prezzo:</label>
+            <input
+              class="mx-2"
+              type="text"
+              name="price"
+              id="price_mod"
+              placeholder="es. 99,99"
+              required
+            />
+            <br />
+            <button class="mt-2 btn btn-primary" type="submit">
+              Modifica prodotto
+            </button>
+            <button
+              id="formModReset"
+              class="mt-2 btn btn-secondary"
+              type="button"
+            >
+              Reset
+            </button>
+          </form>
+        </div>
+        <div
+          id="remove_section"
+          style="max-width: 40rem"
+          class="mt-5 container bg-white p-4 rounded shadow-sm"
+        >
+          <h2 class="mb-3">Sei sicuro di vole eliminare questo prodotto?</h2>
+          <p>Scrivi "CONFERMO" per eliminare il prodotto</p>
+          <form id="form_remove" action="" class="text-start">
+            <input
+              class="mx-2 w-50"
+              type="text"
+              name="conferma"
+              id="conferma"
+              required
+            />
+            <br />
+            <button class="mt-2 btn btn-danger" type="submit">
+              Rimuovi prodotto
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="backoffice.js"></script>
+  </body>
+</html>
