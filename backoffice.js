@@ -153,7 +153,7 @@ const formRemove = document.getElementById("form_remove");
 formRemove.onsubmit = function (e) {
   e.preventDefault();
   const conferma = document.getElementById("conferma").value;
-  if (conferma == "CONFERMA") {
+  if (conferma == "CONFERMO") {
     const newUrl = url + id;
     fetch(newUrl, {
       method: "DELETE",
